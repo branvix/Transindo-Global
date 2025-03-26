@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transindo Global - FAQ</title>
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load only essential CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+      /* FAQ specific styles */
+      .faq-section {
+        background-color: var(--primary-color);
+        padding: 120px 0 100px;
+      }
+      
+      .faq-container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .faq-title {
+        font-size: 2.5rem;
+        font-weight: 200;
+        margin-bottom: 60px;
+        text-align: center;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        position: relative;
+      }
+      
+      .faq-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 1px;
+        background: var(--accent-color);
+      }
+      
+      .faq-item {
+        margin-bottom: 25px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(201, 164, 92, 0.1);
+        border-radius: 3px;
+        overflow: hidden;
+        transition: var(--transition);
+      }
+      
+      .faq-item:hover {
+        border-color: rgba(201, 164, 92, 0.2);
+        box-shadow: var(--box-shadow);
+      }
+      
+      .faq-question {
+        padding: 20px 30px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: var(--transition);
+        letter-spacing: 0.5px;
+      }
+      
+      .faq-question:hover {
+        color: var(--accent-color);
+      }
+      
+      .faq-question.active {
+        color: var(--accent-color);
+        border-bottom: 1px solid rgba(201, 164, 92, 0.1);
+      }
+      
+      .faq-question i {
+        transition: var(--transition);
+      }
+      
+      .faq-question.active i {
+        transform: rotate(180deg);
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        padding: 0 30px;
+        color: var(--text-secondary);
+        font-weight: 300;
+        line-height: 1.8;
+      }
+      
+      .faq-answer.active {
+        max-height: 500px;
+        padding: 20px 30px;
+      }
+      
+      .faq-answer ul {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      
+      .faq-answer li {
+        margin-bottom: 8px;
+      }
+      
+      .faq-note {
+        font-style: italic;
+        margin-top: 15px;
+        opacity: 0.8;
+      }
+      
+      /* Small highlight for formulas and important info */
+      .highlight {
+        background: rgba(201, 164, 92, 0.1);
+        padding: 3px 6px;
+        border-radius: 3px;
+        font-family: 'Courier New', monospace;
+        color: var(--accent-color);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Transindo Global">
+      </a>
+      <div class="header-right">
+        <div class="nav-buttons">
+          <a href="faq.html" class="nav-button">FAQ</a>
+          <a href="global-partners.html" class="nav-button">Global Partners</a>
+          <a href="quote.html" class="nav-button">Price List</a>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">ID/EN</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+      <a href="faq.html" class="nav-button">FAQ</a>
+      <a href="global-partners.html" class="nav-button">Global Partners</a>
+      <a href="quote.html" class="nav-button">Price List</a>
+      <button class="lang-toggle" onclick="toggleLanguage()">ID/EN</button>
+    </div>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <h2 class="faq-title" data-aos="fade-up" data-i18n="faq_title">Frequently Asked Questions</h2>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q1">What services do you offer?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a1">We specialize in shipping cargo from Asia-Pacific countries to Indonesia, including freight forwarding, custom brokerage, and door-to-door delivery.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q2">Which countries do you ship from?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a2">We handle shipments from major Asia-Pacific countries, including China, Singapore, Malaysia, Thailand, Vietnam, South Korea, Japan, and more.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q3">What shipping options are available?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a3">We offer air freight for fast deliveries and sea freight for cost-effective bulk shipments.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q4">How long does shipping take?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a4">Transit times vary based on the origin country, shipping method, and customs processing. Contact us for estimated delivery times.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q5">Do you handle customs brokerage in Indonesia?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a5">Yes, we provide custom brokerage services and handle all customs procedures to ensure smooth clearance and timely delivery.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="350">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q6">Can you arrange door-to-door delivery in Indonesia?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a6">Yes, we offer door-to-door services, including pickup from the origin country and final delivery to any location in Indonesia.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q7">What are the shipping costs?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a7">Costs depend on cargo size, weight, origin, and shipping method. Contact us for a detailed quote.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="450">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q8">What types of cargo do you handle?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a8">We transport general goods, machinery, electronics, textiles, and more. Contact us for special cargo inquiries.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q9">Is cargo insurance available?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a9">Yes, we offer insurance options to protect your shipment from potential risks.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="550">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span data-i18n="faq_q10">How do I book a shipment?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="faq_a10">You can book by contacting us via phone, email, or our website. Our team will guide you through the process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Banner -->
+    <div class="container">
+      <div class="cta-banner" data-aos="fade-up">
+        <h2 class="cta-text" data-i18n="cta_text">Build a Valuable & Profitable Business with Us</h2>
+        <a href="https://wa.me/66843497032" class="cta-button-alt" data-i18n="see_package">Start Now</a>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3 data-i18n="about_us">ABOUT US</h3>
+          <p data-i18n="about_desc">Transindo Global is a premium delivery service dedicated to excellence in global logistics, serving businesses Across Asia Pacific (APAC).</p>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="contact_info">CONTACT INFO</h3>
+          <p>
+            <i class="fas fa-phone"></i> +66 84 349 7032
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i> sales@triexpress.co.id
+          </p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p data-i18n="copyright">&copy; 2025 Transindo Global. All Rights Reserved.</p>
+      </div>
+    </footer>
+    
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/66843497032" class="whatsapp-button" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/faq-translations.js"></script>
+    <script>
+      // Initialize AOS
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          offset: 100
+        });
+      });
+      
+      // FAQ functionality
+      function toggleFaq(element) {
+        element.classList.toggle('active');
+        const answer = element.nextElementSibling;
+        answer.classList.toggle('active');
+      }
+      
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('active');
+      }
+    </script>
+    <script>
+      // FAQ functionality
+      function toggleFaq(element) {
+        element.classList.toggle('active');
+        const answer = element.nextElementSibling;
+        answer.classList.toggle('active');
+      }
+      
+      // Initialize AOS
+      document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+          duration: 800,
+          easing: 'ease-in-out',
+          once: true,
+          offset: 100
+        });
+        
+        // Apply language on page load
+        if (typeof applyLanguage === 'function') {
+          const currentLanguage = localStorage.getItem('language') || 'en';
+          applyLanguage(currentLanguage);
+        } else {
+          // Fallback if main.js hasn't loaded or applyLanguage isn't available
+          loadTranslations();
+        }
+      });
+      
+      // Custom translation function for FAQ page
+      function loadTranslations() {
+        // First try to load from translations.js
+        let translationsLoaded = false;
+        
+        try {
+          if (typeof translations !== 'undefined') {
+            translationsLoaded = true;
+          }
+        } catch (e) {
+          console.log('Translations not loaded from external file, using embedded translations');
+        }
+        
+        // If translations.js isn't available, use embedded translations
+        if (!translationsLoaded) {
+          // Simplified embedded translations for FAQ page
+          window.translations = {
+            en: {
+              "faq_title": "Frequently Asked Questions",
+              "faq_q1": "What services do you offer?",
+              "faq_a1": "We specialize in shipping cargo from Asia-Pacific countries to Indonesia, including freight forwarding, custom brokerage, and door-to-door delivery.",
+              "faq_q2": "Which countries do you ship from?",
+              "faq_a2": "We handle shipments from major Asia-Pacific countries, including China, Singapore, Malaysia, Thailand, Vietnam, South Korea, Japan, and more.",
+              "faq_q3": "What shipping options are available?",
+              "faq_a3": "We offer air freight for fast deliveries and sea freight for cost-effective bulk shipments.",
+              "faq_q4": "How long does shipping take?",
+              "faq_a4": "Transit times vary based on the origin country, shipping method, and customs processing. Contact us for estimated delivery times.",
+              "faq_q5": "Do you handle customs brokerage in Indonesia?",
+              "faq_a5": "Yes, we provide custom brokerage services and handle all customs procedures to ensure smooth clearance and timely delivery.",
+              "faq_q6": "Can you arrange door-to-door delivery in Indonesia?",
+              "faq_a6": "Yes, we offer door-to-door services, including pickup from the origin country and final delivery to any location in Indonesia.",
+              "faq_q7": "What are the shipping costs?",
+              "faq_a7": "Costs depend on cargo size, weight, origin, and shipping method. Contact us for a detailed quote.",
+              "faq_q8": "What types of cargo do you handle?",
+              "faq_a8": "We transport general goods, machinery, electronics, textiles, and more. Contact us for special cargo inquiries.",
+              "faq_q9": "Is cargo insurance available?",
+              "faq_a9": "Yes, we offer insurance options to protect your shipment from potential risks.",
+              "faq_q10": "How do I book a shipment?",
+              "faq_a10": "You can book by contacting us via phone, email, or our website. Our team will guide you through the process.",
+              "cta_text": "Build a Valuable & Profitable Business with Us",
+              "see_package": "Start Now",
+              "about_us": "ABOUT US",
+              "contact_info": "CONTACT INFO",
+              "copyright": "© 2025 Transindo Global. All Rights Reserved."
+            },
+            id: {
+              "faq_title": "Pertanyaan yang Sering Diajukan",
+              "faq_q1": "Layanan apa yang Anda tawarkan?",
+              "faq_a1": "Kami mengkhususkan diri dalam pengiriman kargo dari negara-negara Asia-Pasifik ke Indonesia, termasuk freight forwarding, custom brokerage, dan pengiriman door-to-door.",
+              "faq_q2": "Dari negara mana saja Anda melakukan pengiriman?",
+              "faq_a2": "Kami menangani pengiriman dari negara-negara utama Asia-Pasifik, termasuk China, Singapura, Malaysia, Thailand, Vietnam, Korea Selatan, Jepang, dan lainnya.",
+              "faq_q3": "Opsi pengiriman apa saja yang tersedia?",
+              "faq_a3": "Kami menawarkan kargo udara untuk pengiriman cepat dan kargo laut untuk pengiriman massal yang hemat biaya.",
+              "faq_q4": "Berapa lama waktu pengiriman?",
+              "faq_a4": "Waktu transit bervariasi berdasarkan negara asal, metode pengiriman, dan proses bea cukai. Hubungi kami untuk perkiraan waktu pengiriman.",
+              "faq_q5": "Apakah Anda menangani keperantaraan bea cukai di Indonesia?",
+              "faq_a5": "Ya, kami menyediakan layanan custom brokerage dan menangani semua prosedur bea cukai untuk memastikan kelancaran pengurusan dan pengiriman tepat waktu.",
+              "faq_q6": "Bisakah Anda mengatur pengiriman door-to-door di Indonesia?",
+              "faq_a6": "Ya, kami menawarkan layanan door-to-door, termasuk pengambilan dari negara asal dan pengiriman akhir ke lokasi mana pun di Indonesia.",
+              "faq_q7": "Berapa biaya pengiriman?",
+              "faq_a7": "Biaya tergantung pada ukuran kargo, berat, asal, dan metode pengiriman. Hubungi kami untuk penawaran terperinci.",
+              "faq_q8": "Jenis kargo apa yang Anda tangani?",
+              "faq_a8": "Kami mengangkut barang umum, mesin, elektronik, tekstil, dan lainnya. Hubungi kami untuk pertanyaan tentang kargo khusus.",
+              "faq_q9": "Apakah asuransi kargo tersedia?",
+              "faq_a9": "Ya, kami menawarkan opsi asuransi untuk melindungi pengiriman Anda dari potensi risiko.",
+              "faq_q10": "Bagaimana cara memesan pengiriman?",
+              "faq_a10": "Anda dapat memesan melalui telepon, email, atau situs web kami. Tim kami akan memandu Anda melalui prosesnya.",
+              "cta_text": "Bangun Bisnis yang Bernilai & Menguntungkan Bersama Kami",
+              "see_package": "Mulai Sekarang",
+              "about_us": "TENTANG KAMI",
+              "contact_info": "INFO KONTAK",
+              "copyright": "© 2025 Transindo Global. Hak Cipta Dilindungi."
+            }
+          };
+        }
+        
+        // Apply translations
+        applyFaqTranslations();
+      }
+      
+      // Custom translation function for FAQ page specifically
+      function applyFaqTranslations() {
+        const currentLanguage = localStorage.getItem('language') || 'en';
+        
+        if (!window.translations || !window.translations[currentLanguage]) {
+          console.error('Translations not available');
+          return;
+        }
+        
+        const trans = window.translations[currentLanguage];
+        
+        // Update all elements with data-i18n attribute
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const key = element.getAttribute('data-i18n');
+          if (trans[key]) {
+            element.textContent = trans[key];
+          }
+        });
+      }
+      
+      // Header scroll effect
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+      
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
