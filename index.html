@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transindo Global - Premium Delivery Service</title>
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load only essential CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="Transindo Global">
+      </a>
+      <div class="header-right">
+        <div class="nav-buttons">
+          <a href="faq.html" class="nav-button">FAQ</a>
+          <a href="group.html" class="nav-button">Our Group</a>
+          <a href="quote.html" class="nav-button">Price List</a>
+        </div>
+        <button class="lang-toggle" onclick="toggleLanguage()">ID/EN</button>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-menu-close" onclick="toggleMobileMenu()">
+        <i class="fas fa-times"></i>
+      </button>
+      <a href="faq.html" class="nav-button">FAQ</a>
+      <a href="group.html" class="nav-button">Our Group</a>
+      <a href="quote.html" class="nav-button">Price List</a>
+      <button class="lang-toggle" onclick="toggleLanguage()">ID/EN</button>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title" data-i18n="hero_title">WORLDWIDE PREMIUM DELIVERY</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Excellence in Global Logistics</p>
+        <a href="https://wa.me/6281380264702" class="contact-button" data-i18n="contact_us">CONTACT US</a>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="menu">
+      <div class="menu-content">
+        <h2 class="menu-title" data-aos="fade-up" data-i18n="our_commitment">Our Commitment to You</h2>
+        <div class="menu-grid">
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-box-open service-icon"></i>
+            <h3 data-i18n="menu_title_1">Make Your Life Easier</h3>
+            <p data-i18n="menu_desc_1">Fixed price, free pickup, and professional repacking services to simplify your shipping experience.</p>
+          </div>
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-clipboard-check service-icon"></i>
+            <h3 data-i18n="menu_title_2">Give Proof, Not Just Promises</h3>
+            <p data-i18n="menu_desc_2">We deliver results with transparent tracking and verification at every stage of the shipping process.</p>
+          </div>
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-users service-icon"></i>
+            <h3 data-i18n="menu_title_3">Community</h3>
+            <p data-i18n="menu_desc_3">Join our network of global partners - you're never alone in your logistics journey with Transindo Global.</p>
+          </div>
+          <div class="menu-item" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-chart-line service-icon"></i>
+            <h3 data-i18n="menu_title_4">Full Business Support</h3>
+            <p data-i18n="menu_desc_4">Dedicated assistance and resources to help grow your business across international markets.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="video-container">
+        <h2 class="video-title">Transindo Global</h2>
+        <p class="video-subtitle" data-i18n="video_subtitle">Move Together, Reach Further</p>
+        <div class="video-wrapper">
+          <img src="img/video-thumbnail.jpg" alt="Transindo Global" class="video-thumbnail">
+          <div class="video-play-button" onclick="playVideo()">
+            <i class="fas fa-play"></i>
+          </div>
+          <video id="promo-video" controls>
+            <source src="video/logistic.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
+    <!-- Social Media Section -->
+    <section class="social-section">
+      <div class="social-container">
+        <div class="social-grid">
+          <div class="social-item" data-aos="fade-up">
+            <i class="fab fa-instagram social-icon"></i>
+            <h3 class="social-title">Instagram</h3>
+            <p data-i18n="follow_updates">Follow our latest updates</p>
+            <a href="https://www.instagram.com/transindo_global" class="social-link" target="_blank" data-i18n="follow_us">Follow Us</a>
+          </div>
+          <div class="social-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="fab fa-linkedin social-icon"></i>
+            <h3 class="social-title">LinkedIn</h3>
+            <p data-i18n="connect_network">Connect with our network</p>
+            <a href="https://www.linkedin.com/company/trigroup-global" class="social-link" target="_blank" data-i18n="connect">Connect</a>
+          </div>
+          <div class="social-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="fab fa-facebook social-icon"></i>
+            <h3 class="social-title">Facebook</h3>
+            <p data-i18n="join_community">Join our community</p>
+            <a href="https://www.facebook.com/profile.php?id=100066998267688" class="social-link" target="_blank" data-i18n="like_page">Like Page</a>
+          </div>
+          <div class="social-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="far fa-newspaper social-icon"></i>
+            <h3 class="social-title">News & Events</h3>
+            <p data-i18n="stay_updated">Stay updated with our latest news</p>
+            <a href="news.html" class="social-link" data-i18n="view_all">View All</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+      <div class="slideshow">
+        <div class="slide fade">
+          <img src="img/1.png" alt="Global Logistics Network">
+          <div class="slide-caption" data-i18n="slide_caption_1">State-of-the-art warehouse facilities</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/3.jpeg" alt="Premium Delivery Service">
+          <div class="slide-caption" data-i18n="slide_caption_2">Express international shipping</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/4.jpg" alt="Global Partners">
+          <div class="slide-caption" data-i18n="slide_caption_3">Dedicated support team</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/kargo.jpg" alt="Premium Packaging">
+          <div class="slide-caption" data-i18n="slide_caption_4">Premium packaging for your valuable items</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/11.png" alt="Business Tour">
+          <div class="slide-caption" data-i18n="slide_caption_5">Business Tour</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/12.png" alt="Customer Testimonial">
+          <div class="slide-caption" data-i18n="slide_caption_6">Our Customer Testimonial</div>
+        </div>
+        <div class="slide fade">
+          <img src="img/13.png" alt="Our Client">
+          <div class="slide-caption" data-i18n="slide_caption_7">Our Client</div>
+        </div>
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <!-- Dots/circles -->
+      <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+        <span class="dot" onclick="currentSlide(7)"></span>
+      </div>
+    </section>
+    <!-- CTA Banner -->
+    <div class="container">
+      <div class="cta-banner" data-aos="fade-up">
+        <h2 class="cta-text" data-i18n="cta_text">Build a Valuable & Profitable Business with Us</h2>
+        <a href="https://wa.me/6281380264702" class="cta-button-alt" data-i18n="see_package">See the Package →</a>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3 data-i18n="about_us">ABOUT US</h3>
+          <p data-i18n="about_desc">Transindo Global is a premium delivery service dedicated to excellence in global logistics, serving businesses across Southeast Asia and beyond.</p>
+        </div>
+        <div class="footer-column">
+          <h3 data-i18n="contact_info">CONTACT INFO</h3>
+          <p>
+            <i class="fas fa-phone"></i> +6281380264702
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i> sales@triexpress.co.id
+          </p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p data-i18n="copyright">&copy; 2025 Transindo Global. All Rights Reserved.</p>
+      </div>
+    </footer>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/6281380264702" class="whatsapp-button" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
